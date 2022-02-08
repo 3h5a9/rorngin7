@@ -18,6 +18,33 @@ Rails 7 One click Starter Template With Bootstrap 5 & Devise
       get '/', to: 'dashboard#index'
     end
 
+### add custom stylesheet
+****
+    Go to 
+    
+    `app/assets/stylesheets/application.bootstrap.scss`
+    
+    and add
+
+    @import 'app.scss';
+
+***
+***
+### If got error in signup or sign out
+
+  **Undefined method 'user_url'**
+
+    Add `:turbo_stream` as a navigational format. 
+    
+  This line goes in `config/initializers/devise.rb`.
+
+  uncomment the following line and add as follows
+  
+    config.navigational_formats = ['*/*', :html, :turbo_stream]
+
+***
+***    
+
 ### Run server
   we can run either 
 
